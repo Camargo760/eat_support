@@ -1,157 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Support — E.A.T. (Everything Around Town)</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #ffffff;
-        }
-        header {
-            margin-bottom: 40px;
-        }
-        .app-meta {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        .company-meta {
-            font-size: 13px;
-            color: #888;
-            margin-top: -10px;
-            margin-bottom: 30px;
-        }
-        h1 { 
-            font-size: 32px; 
-            color: #111; 
-            margin-top: 0;
-            margin-bottom: 15px; 
-            font-weight: 700;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 15px;
-        }
-        h2 { 
-            font-size: 22px; 
-            color: #111; 
-            margin-top: 35px; 
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        p, li { font-size: 16px; color: #333; }
-        ul, ol { padding-left: 20px; margin-bottom: 20px; }
-        li { margin-bottom: 8px; }
-        
-        /* Matching the step style from your deletion page */
-        .step-container {
-            margin: 25px 0;
-        }
-        .step-card {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #eee;
-            position: relative;
-        }
-        .step-number {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #666;
-            margin-bottom: 5px;
-            display: block;
-        }
-        .step-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 0 0 10px 0;
-            color: #111;
-        }
-        
-        .contact-email {
-            font-size: 18px;
-            font-weight: 700;
-            background: #f4f4f4;
-            display: inline-block;
-            padding: 8px 15px;
-            border-radius: 4px;
-            margin: 15px 0;
-            border: 1px solid #ddd;
-        }
-        .contact-email a {
-            color: #111;
-            text-decoration: none;
-        }
-        .contact-email a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            margin-top: 60px;
-            font-size: 13px;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 25px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Support — E.A.T. (Everything Around Town)</title>
+<style>
+  :root {
+    --bg: #060A06;
+    --surface: #0D140D;
+    --card: #101810;
+    --border: #1E2E1E;
+    --neon: #39FF6A;
+    --neon-deep: #16C24B;
+    --text: #EAFBEF;
+    --text-secondary: #8FA894;
+    --text-muted: #5A6E5D;
+    --danger: #FF4B4B;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--neon); text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; border-radius: 2px; }
+
+  header {
+    padding: 56px 24px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mark {
+    font-size: 34px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: var(--neon);
+    text-shadow: 0 0 24px rgba(57, 255, 106, 0.45);
+    margin: 0;
+  }
+
+  .tagline {
+    margin: 4px 0 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+  }
+
+  .operator {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 6px;
+  }
+
+  .meta {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 0 0 40px;
+  }
+
+  section {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { margin: 0 0 14px; color: var(--text); }
+  p.lead { color: var(--text-secondary); }
+
+  ul, ol { padding-left: 22px; margin: 0 0 14px; }
+  li { margin-bottom: 8px; }
+
+  .steps {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 8px 24px 8px;
+    counter-reset: step;
+    margin-bottom: 14px;
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--neon);
+    color: #000;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-body h3 {
+    margin: 0 0 4px;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .step-body p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+
+  .email-box {
+    display: block;
+    background: rgba(57, 255, 106, 0.08);
+    border: 1px solid var(--neon);
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--neon);
+    margin: 0 0 14px;
+    word-break: break-all;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 14px;
+    font-size: 13px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  th {
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .callout {
+    background: rgba(57, 255, 106, 0.06);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--neon);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 0 0 14px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px 56px;
+    color: var(--text-muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="app-meta">E.A.T.</div>
-        <div class="app-meta" style="font-size: 12px; color: #888; margin-top: -5px;">Everything Around Town</div>
-        <h1>App Support</h1>
-        <div class="company-meta">Operated by Camargos World Inc</div>
-    </header>
+<header>
+  <p class="mark">E.A.T.</p>
+  <p class="tagline">EVERYTHING AROUND TOWN</p>
+  <p class="operator">Operated by Camargos World Inc</p>
+</header>
 
-    <main>
-        <p>Welcome to the support center for **E.A.T. (Everything Around Town)**. Whether you are a customer searching for local dining options or a vendor managing your digital storefront, we are here to ensure a smooth technical experience.</p>
-        
-        <p>If you are experiencing app performance problems, interface bugs, account sign-in difficulties, or general usability questions, you can request technical help directly from our team.</p>
+<main>
+  <h1>App Support</h1>
+  <p class="meta">Last updated: 26/09/2026</p>
 
-        <h2>How to request support</h2>
-        
-        <div class="step-container">
-            <div class="step-card">
-                <span class="step-number">1</span>
-                <p class="step-title">Email us your support request</p>
-                <p>Send an email from your preferred email address directly to our service portal box below.</p>
-            </div>
+  <section>
+    <p class="lead">
+      This page explains how to request technical support and troubleshooting assistance for your E.A.T. (Everything Around Town) application, whether you're a customer or a vendor.
+    </p>
+  </section>
 
-            <div class="step-card">
-                <span class="step-number">2</span>
-                <p class="step-title">Include your platform specifics</p>
-                <p>To help us diagnose your problem quickly, please tell us if you are using our <strong>iOS or Android app</strong>, your device model, and your account role (Customer or Vendor).</p>
-            </div>
-
-            <div class="step-card">
-                <span class="step-number">3</span>
-                <p class="step-title">We address and resolve your ticket</p>
-                <p>Our team will look into your diagnostic details and respond with a solution path or follow-up troubleshooting steps.</p>
-            </div>
+  <section>
+    <h2>How to request support</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-body">
+          <h3>Email us your support request</h3>
+          <p>Send an email from your active address to our team using the address listed below.</p>
         </div>
-
-        <div class="contact-email">
-            <a href="mailto:info@camargosworld.com">info@camargosworld.com</a>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-body">
+          <h3>Include app identity & system details</h3>
+          <p>Provide the error messages, device details, and whether you are logged in as a customer or vendor storefront.</p>
         </div>
-        <p style="margin-top: 0; font-size: 14px; color: #666;"><em>Use the subject line "App Support Request" so it reaches our technical queue immediately.</em></p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-body">
+          <h3>We evaluate and resolve your ticket</h3>
+          <p>We will review your system diagnostics and reply with a resolution path or technical fix updates.</p>
+        </div>
+      </div>
+    </div>
 
-        <h2>Response Window</h2>
-        <p>We actively monitor our support inbox and aim to review all technical diagnostic tickets within **2 business days**. Response timelines can vary slightly depending on the structural complexity of the technical glitch reported.</p>
-    </main>
+    <a class="email-box" href="mailto:info@://camargosworld.com">
+      info@camargosworld.com
+    </a>
 
-    <footer>
-        <p>E.A.T. — Everything Around Town, operated by Camargos World Inc</p>
-    </footer>
+    <p style="text-align:center; font-size: 12.5px; color: var(--text-muted); margin-top: -6px;">
+      Use the subject line "App Support Request" so it reaches us quickly.
+    </p>
+  </section>
+
+  <section>
+    <h2>What to include in your request</h2>
+    <p>To help us isolate application bugs or server synchronization errors quickly, please include:</p>
+    <ul>
+      <li>The **full name** and registered **email address** associated with your app profile</li>
+      <li>Your operating platform specifics (e.g., Apple iOS 17, Android 14)</li>
+      <li>Whether your profile type is a **customer** or a **vendor**</li>
+      <li>A detailed description or screenshot details of the software crash or behavior window</li>
+    </ul>
+    <div class="callout">
+      Technical logs and identifiers shared are strictly utilized to execute software quality solutions — review our main policy agreements for global handling scopes.
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Response Windows</h2>
+    <p>Here is how our technical operations queue handles response windows for service updates:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Service Scope</th>
+          <th>Target Processing Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Initial Diagnostic Ticket Review</td>
+          <td>Evaluated and acknowledged within <strong>2 business days</strong> of submission logs.</td>
+        </tr>
+        <tr>
+          <td>Minor App / Account Bug Resolution</td>
+          <td>Patched or cleared internally within <strong>5 business days</strong> of verification.</td>
+        </tr>
+        <tr>
+          <td>Critical Infrastructure Outages</td>
+          <td>Escalated immediately; status updates provided within <strong>24 hours</strong> until resolved.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer>
+  E.A.T. — Everything Around Town, operated by Camargos World Inc
+</footer>
 
 </body>
 </html>
