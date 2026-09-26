@@ -3,78 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camargos World Inc. - App Support</title>
+    <title>App Support — E.A.T. (Everything Around Town)</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            color: #222;
+            max-width: 680px;
             margin: 0 auto;
             padding: 40px 20px;
-            background-color: #f9f9fb;
+            background-color: #ffffff;
         }
         header {
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .app-meta {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .company-meta {
+            font-size: 13px;
+            color: #888;
+            margin-top: -10px;
             margin-bottom: 30px;
-            text-align: center;
         }
-        h1 { color: #111; margin-bottom: 5px; }
-        h2 { color: #0071e3; margin-top: 30px; border-bottom: 1px solid #eaeaea; padding-bottom: 8px; }
-        p, li { font-size: 16px; color: #444; }
-        .card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
-            border: 1px solid #e1e4e8;
+        h1 { 
+            font-size: 32px; 
+            color: #111; 
+            margin-top: 0;
+            margin-bottom: 15px; 
+            font-weight: 700;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
         }
-        .contact-box {
-            background: #eef7ff;
-            border-left: 4px solid #0071e3;
-            padding: 15px 20px;
+        h2 { 
+            font-size: 22px; 
+            color: #111; 
+            margin-top: 35px; 
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        p, li { font-size: 16px; color: #333; }
+        ul, ol { padding-left: 20px; margin-bottom: 20px; }
+        li { margin-bottom: 8px; }
+        
+        /* Matching the step style from your deletion page */
+        .step-container {
+            margin: 25px 0;
+        }
+        .step-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        .step-number {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            color: #111;
+        }
+        
+        .contact-email {
+            font-size: 18px;
+            font-weight: 700;
+            background: #f4f4f4;
+            display: inline-block;
+            padding: 8px 15px;
             border-radius: 4px;
-            margin: 20px 0;
+            margin: 15px 0;
+            border: 1px solid #ddd;
         }
-        .email-link {
-            font-weight: bold;
-            color: #0071e3;
+        .contact-email a {
+            color: #111;
             text-decoration: none;
         }
-        .email-link:hover { text-decoration: underline; }
+        .contact-email a:hover {
+            text-decoration: underline;
+        }
         footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 14px;
+            margin-top: 60px;
+            font-size: 13px;
             color: #888;
-            border-top: 1px solid #eaeaea;
-            padding-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 25px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Camargos World Inc.</h1>
-        <p>Official Customer Support</p>
+        <div class="app-meta">E.A.T.</div>
+        <div class="app-meta" style="font-size: 12px; color: #888; margin-top: -5px;">Everything Around Town</div>
+        <h1>App Support</h1>
+        <div class="company-meta">Operated by Camargos World Inc</div>
     </header>
 
-    <!-- SECTION: APP SUPPORT -->
-    <section class="card">
-        <h2>App Support & Inquiries</h2>
-        <p>Welcome to the support center for applications developed by <strong>Camargos World Inc.</strong> We are dedicated to providing you with the best possible user experience.</p>
-        <p>If you are experiencing technical difficulties, bugs, crashes, or have general questions regarding app functionality, please reach out directly to our help desk:</p>
+    <main>
+        <p>Welcome to the support center for **E.A.T. (Everything Around Town)**. Whether you are a customer searching for local dining options or a vendor managing your digital storefront, we are here to ensure a smooth technical experience.</p>
         
-        <div class="contact-box">
-            <strong>Contact Support Email:</strong> <a class="email-link" href="mailto:info@camargosworld.com">info@camargosworld.com</a>
+        <p>If you are experiencing app performance problems, interface bugs, account sign-in difficulties, or general usability questions, you can request technical help directly from our team.</p>
+
+        <h2>How to request support</h2>
+        
+        <div class="step-container">
+            <div class="step-card">
+                <span class="step-number">1</span>
+                <p class="step-title">Email us your support request</p>
+                <p>Send an email from your preferred email address directly to our service portal box below.</p>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">2</span>
+                <p class="step-title">Include your platform specifics</p>
+                <p>To help us diagnose your problem quickly, please tell us if you are using our <strong>iOS or Android app</strong>, your device model, and your account role (Customer or Vendor).</p>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">3</span>
+                <p class="step-title">We address and resolve your ticket</p>
+                <p>Our team will look into your diagnostic details and respond with a solution path or follow-up troubleshooting steps.</p>
+            </div>
         </div>
-        <p><em>Please include your device model (e.g., iPhone 15, Samsung Galaxy S24) and a brief description of the issue so we can assist you promptly. We aim to respond to all inquiries within 48 hours.</em></p>
-    </section>
+
+        <div class="contact-email">
+            <a href="mailto:info@camargosworld.com">info@camargosworld.com</a>
+        </div>
+        <p style="margin-top: 0; font-size: 14px; color: #666;"><em>Use the subject line "App Support Request" so it reaches our technical queue immediately.</em></p>
+
+        <h2>Response Window</h2>
+        <p>We actively monitor our support inbox and aim to review all technical diagnostic tickets within **2 business days**. Response timelines can vary slightly depending on the structural complexity of the technical glitch reported.</p>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Camargos World Inc. All rights reserved.</p>
+        <p>E.A.T. — Everything Around Town, operated by Camargos World Inc</p>
     </footer>
 
 </body>
